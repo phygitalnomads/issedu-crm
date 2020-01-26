@@ -29,9 +29,10 @@ class CrmProfessorController extends Controller
         $canVisitAdmin = $user->hasPermission('browse_admin');
 
         //dd($canVisitAdmin);
-        $crmId = 41576;
+        $crmId = 26458;
 
         $crmResponse = MiniCrmController::getProfessorDetails($crmId);
+        //$crmResponse = MiniCrmController::getProfessorContactDetails($crmId);
 
         //dd($crmResponse);
 

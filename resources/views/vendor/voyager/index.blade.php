@@ -6,13 +6,16 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script> -->
 
 @section('content')
-    <h3 style="text-align: center"><a href="/admin/utilizator">Detalii</a></h3>
+    <!-- <h3 style="text-align: center"><a href="/admin/utilizator">Detalii</a></h3> -->
+    <!-- <h3 style="text-align: center"><a href="/admin/profesor">Test Profesor cu id-ul 41576 din crm(mediu test)</a></h3> -->
     <?php //echo $user->name ?>
-    <?php //echo $student->name ?>
+    <?php //dd($utilizator) ?>
     <div class="page-content">
         @include('voyager::alerts')
         @include('voyager::dimmers')
-        
+        <?php //var_dump($business)?>
+
+
         <?php /*if (isset($user)) : ?>
           <div class="container">
                 <h2>Bun venit {{$user->name}} </h2>
@@ -48,18 +51,32 @@
 
         <?php if (isset($utilizator)) : ?>
           <div class="container">
-          <h2>Bun venit {{$utilizator['Name']}} </h2>
-              <p>Test</p>
+          <h2>Bun venit <?php echo $utilizator['Name'] ?> </h2>
+              <p>Detaliile principale</p>
                 <table class="table table-hover">
                   <tbody>
                   <?php foreach ($utilizator as $key => $value) : ?>
                     <tr>
-                      <th>{{$key}}</th>
-                      <th>{{$value}}</th>
+                      <th><?php echo $key ?></th>
+                      <th><?php echo $value ?></th>
                     </tr>
                   <?php endforeach; ?>
                   </tbody>
                 </table>
+                <?php if (isset($business)) : ?>
+                <p>Detaliile business</p>
+                <table class="table table-hover">
+                  <tbody>
+                  <?php foreach ($business as $key => $value) : ?>
+                    <tr>
+                      <th><?php echo $key ?></th>
+                      <th><?php echo $value ?></th>
+                    </tr>
+                  <?php endforeach; ?>
+                  </tbody>
+                </table>
+                  <?php endif; ?>
+              
           </div>
         <?php endif; ?>
 
@@ -79,6 +96,8 @@
                 </table>
           </div>
         <?php endif; ?>
-
+        <?php if (!isset($utilizator) && (!isset($profesor))) : ?>
+        <h2 style="text-align:center"> Momentan nu avem detalii despre acest cont </h2>
+        <?php endif; ?>
     </div>
 @stop

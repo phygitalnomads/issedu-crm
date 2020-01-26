@@ -8,6 +8,7 @@ class CrmProfessor extends Model
 {
     protected $fillable = [
         'crm_id',
+        'email',
         'name',
         'url',
         'contact_id',

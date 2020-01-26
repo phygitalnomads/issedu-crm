@@ -24,20 +24,33 @@ class CrmStudentController extends Controller
      */
     public function index()
     {
-        //
         $user = auth()->user();
 
-        $canVisitAdmin = $user->hasPermission('browse_admin');
+        //$canVisitAdmin = $user->hasPermission('browse_admin');
+ 
+        $userCrmId = $user->crm_id;
 
-        //dd($canVisitAdmin);
-        $crmId = 40566;
+        $crmResponse = MiniCrmController::getStudentDetails($userCrmId);
 
-        $crmResponse = MiniCrmController::getStudentDetails($crmId);
+        if ($crmResponse) {
+            $crmResponse['TipUser'] = $user->user_type;
+            
+            $businessData = MiniCrmController::getBusinessDetails($crmResponse['BusinessId']);
+            $businessData['Tags'] = '';
+        } else {
+            $businessData = null;
+        }
 
-        //dd($crmResponse);
+       
 
-        return view('vendor.voyager.index', ['user' => $user], ['utilizator' => $crmResponse]);
+        return view('vendor.voyager.index',
+            ['utilizator' => $crmResponse],
+            ['business' => $businessData]
+        );
 
+        // return view('vendor.voyager.index')->with('user', $user)
+        //     ->with('utilizator', $crmResponse)
+        //     ->with('business', $businessData);
     }
 
     /**
