@@ -19,7 +19,7 @@ Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
 
-Route::get('/crm','MiniCrmController@index');
+Route::get('/crm/{page?}','MiniCrmController@index');
 
 Route::get('/admin/utilizator','CrmStudentController@index');
 

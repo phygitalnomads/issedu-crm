@@ -52,18 +52,118 @@
         <?php if (isset($utilizator)) : ?>
           <div class="container">
           <h2>Bun venit <?php echo $utilizator['Name'] ?> </h2>
-              <p>Detaliile principale</p>
-                <table class="table table-hover">
-                  <tbody>
-                  <?php foreach ($utilizator as $key => $value) : ?>
-                    <tr>
-                      <th><?php echo $key ?></th>
-                      <th><?php echo $value ?></th>
-                    </tr>
-                  <?php endforeach; ?>
-                  </tbody>
-                </table>
-                <?php if (isset($business)) : ?>
+
+            <?php if ($utilizator['TipUser']=='Student') : ?>
+              <div class="list-group">
+                <a href="#" class="list-group-item">
+                  <div class="row">
+                    <div class="col-sm-4 group_title">Nume oferta tabara</div>
+                    <div class="col-sm-8 group_content"><?php echo $utilizator['NumeTabara'] ?></div>
+                  </div>
+                </a>
+                <a href="#" class="list-group-item">
+                  <div class="row">
+                    <div class="col-sm-4 group_title">Data incepe tabara</div>
+                    <div class="col-sm-8 group_content"><?php echo $utilizator['DataIncepereTabara'] ?></div>
+                  </div>
+                </a>
+                <a href="#" class="list-group-item">
+                  <div class="row">
+                    <div class="col-sm-4 group_title">Data incheiere tabara</div>
+                    <div class="col-sm-8 group_content"><?php echo $utilizator['DataIncheiereTabara'] ?></div>
+                  </div>
+                </a>
+                <a href="#" class="list-group-item">
+                  <div class="row">
+                    <div class="col-sm-4 group_title">Nume indrumator grup</div>
+                    <div class="col-sm-8 group_content"><?php echo $utilizator['IndrumatorGrup2'] ?></div>
+                  </div>
+                </a>
+                <a href="#" class="list-group-item">
+                  <div class="row">
+                    <div class="col-sm-4 group_title">Oferta tabara</div>
+                    <div class="col-sm-8 group_content"> Accesesaza link ? </div>
+                  </div>
+                </a>
+                <a href="#" class="list-group-item">
+                  <div class="row">
+                    <div class="col-sm-4 group_title">Exemplu Program</div>
+                    <div class="col-sm-8 group_content">Descarca</div>
+                  </div>
+                </a>
+                <a href="<?php echo $utilizator['CopieCipasaport'] ?>" target="_blank" class="list-group-item">
+                  <div class="row">
+                    <div class="col-sm-4 group_title">Copie CI/pasaport</div>
+                    <div class="col-sm-8 group_content">Descarca</div>
+                  </div>
+                </a>
+                <a href="#" class="list-group-item">
+                  <div class="row">
+                    <div class="col-sm-4 group_title">Nr. telefon contact implicit</div>
+                    <div class="col-sm-8 group_content"><?php echo $utilizator['NrTelefon1'] ?></div>
+                  </div>
+                </a>
+                <a href="#" class="list-group-item">
+                  <div class="row">
+                    <div class="col-sm-4 group_title">Data primei plati (data avans)</div>
+                    <div class="col-sm-8 group_content"><?php echo $utilizator['DataPrimeiPlati'] ?></div>
+                  </div>
+                </a>
+                <a href="#" class="list-group-item">
+                  <div class="row">
+                    <div class="col-sm-4 group_title">Incasare factura rest plata 1</div>
+                    <div class="col-sm-8 group_content"><?php echo $utilizator['IncasareFacturaRestPlata1'] ?></div>
+                  </div>
+                </a>
+                <a href="#" class="list-group-item">
+                  <div class="row">
+                    <div class="col-sm-4 group_title">Data incasare rest plata 1</div>
+                    <div class="col-sm-8 group_content"><?php echo $utilizator['DataFacturaRestPlata1'] ?></div>
+                  </div>
+                </a>
+                <a href="#" class="list-group-item">
+                  <div class="row">
+                    <div class="col-sm-4 group_title">Incasare factura rest plata 2</div>
+                    <div class="col-sm-8 group_content"><?php echo $utilizator['IncasareFacturaRestPlata2'] ?></div>
+                  </div>
+                </a>
+                <a href="#" class="list-group-item">
+                  <div class="row">
+                    <div class="col-sm-4 group_title">Data incasare rest plata 2</div>
+                    <div class="col-sm-8 group_content"><?php echo $utilizator['DataFacturaRestPlata2'] ?></div>
+                  </div>
+                </a>
+                <a href="#" class="list-group-item">
+                  <div class="row">
+                    <div class="col-sm-4 group_title">Sold final tabara</div>
+                    <div class="col-sm-8 group_content"><?php echo $utilizator['Int1694'] ?></div>
+                  </div>
+                </a>
+                <a href="#" class="list-group-item">
+                  <div class="row">
+                    <div class="col-sm-4 group_title">Ultima actualizare</div>
+                    <div class="col-sm-8 group_content"><?php echo $utilizator['UpdatedAt'] ?></div>
+                  </div>
+                </a>
+                <a href="#" class="list-group-item">
+                  <div class="row">
+                    <div class="col-sm-4 group_title">Reduceri acordate</div>
+                    <div class="col-sm-8 group_content"><?php echo $utilizator['ReduceriAcordate'] ?></div>
+                  </div>
+                </a>
+              </div>
+              <?php /*
+              <table class="table table-hover">
+                <tbody>
+                <?php foreach ($utilizator as $key => $value) : ?>
+                  <tr>
+                    <th><?php echo $key ?></th>
+                    <th><?php echo $value ?></th>
+                  </tr>
+                <?php endforeach; ?>
+                </tbody>
+              </table>
+              <?php if (isset($business)) : ?>
                 <p>Detaliile business</p>
                 <table class="table table-hover">
                   <tbody>
@@ -75,29 +175,115 @@
                   <?php endforeach; ?>
                   </tbody>
                 </table>
-                  <?php endif; ?>
-              
+              <?php endif; ?> */ ?>
+            <?php endif; ?>
+
+            <?php if ($utilizator['TipUser']=='Profesor') : ?>
+              <div class="list-group">
+                <a href="#" class="list-group-item">
+                  <div class="row">
+                    <div class="col-sm-4 group_title">Nume oferta tabara</div>
+                    <div class="col-sm-8 group_content"><?php echo $utilizator['NumeTabara'] ?></div>
+                  </div>
+                </a>
+                <a href="#" class="list-group-item">
+                  <div class="row">
+                    <div class="col-sm-4 group_title">Data incepe tabara</div>
+                    <div class="col-sm-8 group_content"><?php echo $utilizator['DataIncepereTabara'] ?></div>
+                  </div>
+                </a>
+                <a href="#" class="list-group-item">
+                  <div class="row">
+                    <div class="col-sm-4 group_title">Data incheiere tabara</div>
+                    <div class="col-sm-8 group_content"><?php echo $utilizator['DataIncheiereTabara'] ?></div>
+                  </div>
+                </a>
+                <a href="#" class="list-group-item">
+                  <div class="row">
+                    <div class="col-sm-4 group_title">Nume indrumator grup</div>
+                    <div class="col-sm-8 group_content"><?php echo $utilizator['IndrumatorGrup2'] ?></div>
+                  </div>
+                </a>
+                <a href="#" class="list-group-item">
+                  <div class="row">
+                    <div class="col-sm-4 group_title">Oferta tabara</div>
+                    <div class="col-sm-8 group_content"> Accesesaza link ? </div>
+                  </div>
+                </a>
+                <a href="#" class="list-group-item">
+                  <div class="row">
+                    <div class="col-sm-4 group_title">Exemplu Program</div>
+                    <div class="col-sm-8 group_content">Descarca</div>
+                  </div>
+                </a>
+                <a href="<?php echo $utilizator['CopieCipasaport'] ?>" target="_blank" class="list-group-item">
+                  <div class="row">
+                    <div class="col-sm-4 group_title">Copie CI/pasaport</div>
+                    <div class="col-sm-8 group_content">Descarca</div>
+                  </div>
+                </a>
+                <a href="#" class="list-group-item">
+                  <div class="row">
+                    <div class="col-sm-4 group_title">Nr. telefon contact implicit</div>
+                    <div class="col-sm-8 group_content"><?php echo $utilizator['NrTelefon1'] ?></div>
+                  </div>
+                </a>
+                <a href="#" class="list-group-item">
+                  <div class="row">
+                    <div class="col-sm-4 group_title">Data primei plati (data avans)</div>
+                    <div class="col-sm-8 group_content"><?php echo $utilizator['DataPrimeiPlati'] ?></div>
+                  </div>
+                </a>
+                <a href="#" class="list-group-item">
+                  <div class="row">
+                    <div class="col-sm-4 group_title">Incasare factura rest plata 1</div>
+                    <div class="col-sm-8 group_content"><?php echo $utilizator['IncasareFacturaRestPlata1'] ?></div>
+                  </div>
+                </a>
+                <a href="#" class="list-group-item">
+                  <div class="row">
+                    <div class="col-sm-4 group_title">Data incasare rest plata 1</div>
+                    <div class="col-sm-8 group_content"><?php echo $utilizator['DataFacturaRestPlata1'] ?></div>
+                  </div>
+                </a>
+                <a href="#" class="list-group-item">
+                  <div class="row">
+                    <div class="col-sm-4 group_title">Incasare factura rest plata 2</div>
+                    <div class="col-sm-8 group_content"><?php echo $utilizator['IncasareFacturaRestPlata2'] ?></div>
+                  </div>
+                </a>
+                <a href="#" class="list-group-item">
+                  <div class="row">
+                    <div class="col-sm-4 group_title">Data incasare rest plata 2</div>
+                    <div class="col-sm-8 group_content"><?php echo $utilizator['DataFacturaRestPlata2'] ?></div>
+                  </div>
+                </a>
+                <a href="#" class="list-group-item">
+                  <div class="row">
+                    <div class="col-sm-4 group_title">Sold final tabara</div>
+                    <div class="col-sm-8 group_content"><?php echo $utilizator['Int1694'] ?></div>
+                  </div>
+                </a>
+                <a href="#" class="list-group-item">
+                  <div class="row">
+                    <div class="col-sm-4 group_title">Ultima actualizare</div>
+                    <div class="col-sm-8 group_content"><?php echo $utilizator['UpdatedAt'] ?></div>
+                  </div>
+                </a>
+                <a href="#" class="list-group-item">
+                  <div class="row">
+                    <div class="col-sm-4 group_title">Reduceri acordate</div>
+                    <div class="col-sm-8 group_content"><?php echo $utilizator['ReduceriAcordate'] ?></div>
+                  </div>
+                </a>
+              </div>
+            <?php endif; ?>
           </div>
         <?php endif; ?>
 
-        <?php if (isset($profesor)) : ?>
-          <div class="container">
-          <h2>Bun venit {{$profesor['Name']}} </h2>
-              <p>Test</p>
-                <table class="table table-hover">
-                  <tbody>
-                  <?php foreach ($profesor as $key => $value) : ?>
-                    <tr>
-                      <th>{{$key}}</th>
-                      <th>{{$value}}</th>
-                    </tr>
-                  <?php endforeach; ?>
-                  </tbody>
-                </table>
-          </div>
-        <?php endif; ?>
-        <?php if (!isset($utilizator) && (!isset($profesor))) : ?>
+        <?php if (!isset($utilizator)) : ?>
         <h2 style="text-align:center"> Momentan nu avem detalii despre acest cont </h2>
+        <h2 style="text-align:center"><a href='/admin/utilizator'>Reincearca</a></h2>
         <?php endif; ?>
     </div>
 @stop

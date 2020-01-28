@@ -21,7 +21,10 @@ class MiniCrmController extends Controller
 
     public function index(Request $request)
     {
-         return $this->getStudents(1, 0);
+        $page = isset($request->page) ? (int)$request->page : 1;
+
+        return $this->getStudents($page, 0);
+
         //return $this->getProfs(1);
         // return $this->getStudentDetails(55557);
 
@@ -53,7 +56,7 @@ class MiniCrmController extends Controller
     //$Url = $url.'Project/26494';
     //$Url = $url.'Project/57324';
     //$Url = $url.'Contact/62844';
-        $Url = $url.'Contact/62843';
+        $Url = $url.'Contact/64035';
     //$Url = $url.'Project?CategoryId=23&UserId=-1&Query=Royal%20Russell%20School%20-%20Londra';
     //$Url = $url.'Project/14705';
     //$Url = $url.'Schema/Project/23'; //schema detaliata a DB
@@ -134,7 +137,10 @@ class MiniCrmController extends Controller
     {
         //$url = $this->buildUrl('Project?CategoryId=22&Page='.$page);
         //status 2834 = inscris
+        //?GroupId=724 - idul filtrului Tabere 2020
+
         $url = $this->buildUrl('Project?CategoryId=22&Deleted='.$deleted.'&Page='.$page.'&StatusId=2834');
+        //$url = $this->buildUrl('Project?GroupId=724');
         $students = $this->makeCurlCall($url);
 
         //dd($students);

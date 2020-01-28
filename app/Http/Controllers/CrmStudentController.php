@@ -25,21 +25,26 @@ class CrmStudentController extends Controller
     public function index()
     {
         $user = auth()->user();
-
         //$canVisitAdmin = $user->hasPermission('browse_admin');
- 
         $userCrmId = $user->crm_id;
+        $userType = $user->user_type;
 
-        $crmResponse = MiniCrmController::getStudentDetails($userCrmId);
+        if ($userType === 'Student') {
+            $crmResponse = MiniCrmController::getStudentDetails($userCrmId);
+            if ($crmResponse) {
+                $crmResponse['TipUser'] = $userType;
+    
+                $businessData = MiniCrmController::getBusinessDetails($crmResponse['BusinessId']);
+                $businessData['Tags'] = '';
 
-        if ($crmResponse) {
-            $crmResponse['TipUser'] = $user->user_type;
-            
-            $businessData = MiniCrmController::getBusinessDetails($crmResponse['BusinessId']);
-            $businessData['Tags'] = '';
-        } else {
-            $businessData = null;
+                $detaliiExtra = MiniCrmController::getBusinessDetails($crmResponse['ContactId']);
+                $crmResponse['NrTelefon1'] = $detaliiExtra['Phone'];
+            } else {
+                $businessData = null;
+            }
         }
+        
+        //if profesor
 
        
 
