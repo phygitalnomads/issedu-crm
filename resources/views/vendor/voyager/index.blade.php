@@ -16,6 +16,7 @@
 
         <?php //dd($data); ?>
 
+        <?php if (isset($data)) : ?>
           <div class="container">
 
             <?php if ($data['TipUser'] == 'Student') : ?>
@@ -87,6 +88,7 @@
             <?php endif; ?>
 
           </div>
+        <?php endif; ?>
 
         <?php if (!isset($data)) : ?>
         <h2 style="text-align:center"> Momentan nu avem detalii despre acest cont </h2>
