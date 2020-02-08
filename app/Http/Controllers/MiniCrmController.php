@@ -362,7 +362,7 @@ class MiniCrmController extends Controller
                         echo "Userul cu emailul: ".$contactData['Email']." exista deja in DB<br>";
                         echo "Modificat userul cu emailul ".$contactData['Email']." din Elev in Profesor<br>";
                         $user->user_type='Profesor';
-                        $user->crm_id = $prof['ContactId'];
+                        $user->crm_id = $prof['Id'];
                         $user->role_id = 4;
                         $user->save();
 
