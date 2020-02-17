@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Notifications\Notifiable;
 use TCG\Voyager\Traits\VoyagerUser;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\Cache;
 
 
 class CrmStudentController extends Controller
@@ -63,6 +64,10 @@ class CrmStudentController extends Controller
     {
         $start = microtime(true);
 
+        if (Cache::has('student_details')) {
+           return Cache::get('student_details');
+        }
+
         $cards = CrmStudent::where('email', '=', $email)->orderBy('crm_id', 'desc')->get();
 
         $data = [];
@@ -109,6 +114,9 @@ class CrmStudentController extends Controller
 
         echo("Timp executie: ".$time_elapsed_secs = microtime(true) - $start);
 
+
+        Cache::put('student_details', $data, '3600'); //o ora in cache
+
         return $data;
     }
 
@@ -116,6 +124,10 @@ class CrmStudentController extends Controller
     public function prepareProfesorDetails($email)
     {
         $start = microtime(true);
+
+        if (Cache::has('professor_details')) {
+            return Cache::get('professor_details');
+        }
 
         $cards = CrmProfessor::where('email', '=', $email)->orderBy('crm_id', 'desc')->get();
 
@@ -217,6 +229,8 @@ class CrmStudentController extends Controller
 
         echo("Timp executie: ".$time_elapsed_secs = microtime(true) - $start);
         //dd($data);
+        Cache::put('professor_details', $data, '3600'); //o ora in cache
+
         return $data;
     }
 
