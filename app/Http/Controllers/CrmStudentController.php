@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Notifications\Notifiable;
 use TCG\Voyager\Traits\VoyagerUser;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\Cache;
 
 
 class CrmStudentController extends Controller
@@ -63,6 +64,12 @@ class CrmStudentController extends Controller
     {
         $start = microtime(true);
 
+        $cacheKey = 'student_details'.$email.$crmId;
+
+        if (Cache::has($cacheKey)) {
+           return Cache::get($cacheKey);
+        }
+
         $cards = CrmStudent::where('email', '=', $email)->orderBy('crm_id', 'desc')->get();
 
         $data = [];
@@ -109,13 +116,21 @@ class CrmStudentController extends Controller
 
         echo("Timp executie: ".$time_elapsed_secs = microtime(true) - $start);
 
+
+        Cache::put( $cacheKey, $data, '7200'); //o ora in cache
+
         return $data;
     }
 
 
-    public function prepareProfesorDetails($email)
+    public function prepareProfesorDetails($email, $crmId)
     {
         $start = microtime(true);
+
+        $cacheKey = 'professor_details'.$email.$crmId;
+        if (Cache::has($cacheKey)) {
+            return Cache::get($cacheKey);
+        }
 
         $cards = CrmProfessor::where('email', '=', $email)->orderBy('crm_id', 'desc')->get();
 
@@ -217,6 +232,8 @@ class CrmStudentController extends Controller
 
         echo("Timp executie: ".$time_elapsed_secs = microtime(true) - $start);
         //dd($data);
+        Cache::put( $cacheKey, $data, '7200'); //2 ore cache
+
         return $data;
     }
 
