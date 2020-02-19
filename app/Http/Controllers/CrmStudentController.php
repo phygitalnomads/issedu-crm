@@ -64,8 +64,10 @@ class CrmStudentController extends Controller
     {
         $start = microtime(true);
 
-        if (Cache::has('student_details')) {
-           return Cache::get('student_details');
+        $cacheKey = 'student_details'.$email.$crmId;
+
+        if (Cache::has($cacheKey)) {
+           return Cache::get($cacheKey);
         }
 
         $cards = CrmStudent::where('email', '=', $email)->orderBy('crm_id', 'desc')->get();
@@ -115,18 +117,19 @@ class CrmStudentController extends Controller
         echo("Timp executie: ".$time_elapsed_secs = microtime(true) - $start);
 
 
-        Cache::put('student_details', $data, '3600'); //o ora in cache
+        Cache::put( $cacheKey, $data, '7200'); //o ora in cache
 
         return $data;
     }
 
 
-    public function prepareProfesorDetails($email)
+    public function prepareProfesorDetails($email, $crmId)
     {
         $start = microtime(true);
 
-        if (Cache::has('professor_details')) {
-            return Cache::get('professor_details');
+        $cacheKey = 'professor_details'.$email.$crmId;
+        if (Cache::has($cacheKey)) {
+            return Cache::get($cacheKey);
         }
 
         $cards = CrmProfessor::where('email', '=', $email)->orderBy('crm_id', 'desc')->get();
@@ -229,7 +232,7 @@ class CrmStudentController extends Controller
 
         echo("Timp executie: ".$time_elapsed_secs = microtime(true) - $start);
         //dd($data);
-        Cache::put('professor_details', $data, '3600'); //o ora in cache
+        Cache::put( $cacheKey, $data, '7200'); //2 ore cache
 
         return $data;
     }
