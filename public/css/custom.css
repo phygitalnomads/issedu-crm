@@ -1,0 +1,19 @@
+.app-container .content-container .side-menu .navbar-header .navbar-brand .logo-icon-container{
+    width: 100%;
+    height: auto;
+}
+.app-container .content-container .side-menu .navbar-header .navbar-brand img{
+    max-width: 200px;
+}
+.voyager .side-menu .navbar-header {
+    background: #fff;
+    border-color: #ffffff;
+}
+.logout-btn .btn{
+    padding: 6px;
+    background-color: #63a143;
+    color: #fff;
+}
+#adminmenu .navbar-nav:first-child{
+    //display: none;
+}
