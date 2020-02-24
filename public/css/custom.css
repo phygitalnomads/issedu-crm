@@ -17,3 +17,8 @@
 #adminmenu .navbar-nav:first-child{
     //display: none;
 }
+
+
+.uk-card-body {
+    cursor: pointer;
+}
