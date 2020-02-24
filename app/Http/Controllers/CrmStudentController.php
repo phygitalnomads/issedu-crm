@@ -95,10 +95,10 @@ class CrmStudentController extends Controller
                 $bulkData['Tabara'] = $crmTabaraData;
 
                 //detalii card business
-//                $crmBusinessId = $crmDetails['BusinessId'];
-//                $crmBusinessData = MiniCrmController::getBusinessDetails($crmBusinessId);
-//                $businessData['Tags'] = '';
-//                $bulkData['Business'] = $crmBusinessData;
+                $crmBusinessId = $crmDetails['BusinessId'];
+                $crmBusinessData = MiniCrmController::getBusinessDetails($crmBusinessId);
+                $businessData['Tags'] = '';
+                $bulkData['Business'] = $crmBusinessData;
 
                 //detalii copil?
                 $crmContactId = $crmDetails['ContactId'];
@@ -162,10 +162,10 @@ class CrmStudentController extends Controller
                 $bulkData['Tabara'] = $crmTabaraData;
 
                 //detalii card business
-//                $crmBusinessId = $crmDetails['BusinessId'];
-//                $crmBusinessData = MiniCrmController::getBusinessDetails($crmBusinessId);
-//                $businessData['Tags'] = '';
-//                $bulkData['Business'] = $crmBusinessData;
+                $crmBusinessId = $crmDetails['BusinessId'];
+                $crmBusinessData = MiniCrmController::getBusinessDetails($crmBusinessId);
+                $businessData['Tags'] = '';
+                $bulkData['Business'] = $crmBusinessData;
 
                 //detalii copil?
                 $crmContactId = $crmDetails['ContactId'];
@@ -209,10 +209,10 @@ class CrmStudentController extends Controller
                     $bulkData['Tabara'] = $crmTabaraData;
 
                     //detalii card business
-//                $crmBusinessId = $crmDetails['BusinessId'];
-//                $crmBusinessData = MiniCrmController::getBusinessDetails($crmBusinessId);
-//                $businessData['Tags'] = '';
-//                $bulkData['Business'] = $crmBusinessData;
+                    $crmBusinessId = $crmDetails['BusinessId'];
+                    $crmBusinessData = MiniCrmController::getBusinessDetails($crmBusinessId);
+                    $businessData['Tags'] = '';
+                    $bulkData['Business'] = $crmBusinessData;
 
                     //detalii copil?
                     $crmContactId = $crmDetails['ContactId'];
