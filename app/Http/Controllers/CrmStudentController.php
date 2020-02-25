@@ -133,7 +133,6 @@ class CrmStudentController extends Controller
         }
 
         $cards = CrmProfessor::where('email', '=', $email)->orderBy('crm_id', 'desc')->get();
-
         $data = [];
         $data['TipUser'] = 'Profesor';
 
@@ -151,21 +150,21 @@ class CrmStudentController extends Controller
             //detalii principale
             $crmDetails = MiniCrmController::getProfessorDetails($entry->crm_id);
             //dd($crmDetails);
-            $bulkData['Nume'] = strtok($crmDetails['Name'], '(');
+            $bulkData['Nume'] = $crmDetails['Name'];
             $bulkData['Detalii'] = $crmDetails;
 
             //detalii tabara
             $crmTabaraId = $crmDetails['IdTabaraLink2'];
-            //daca nu are tabara asociata nu mai facem call in crm api
+            //daca nu are tabara asociata nu mai facem call in crm api ptr ca nu putem lua detaliile taberei
             if ($crmTabaraId) {
                 $crmTabaraData = MiniCrmController::getTabaraDetails($crmTabaraId);
                 $bulkData['Tabara'] = $crmTabaraData;
 
                 //detalii card business
-                $crmBusinessId = $crmDetails['BusinessId'];
-                $crmBusinessData = MiniCrmController::getBusinessDetails($crmBusinessId);
-                $businessData['Tags'] = '';
-                $bulkData['Business'] = $crmBusinessData;
+//                $crmBusinessId = $crmDetails['BusinessId'];
+//                $crmBusinessData = MiniCrmController::getBusinessDetails($crmBusinessId);
+//                $businessData['Tags'] = '';
+//                $bulkData['Business'] = $crmBusinessData;
 
                 //detalii copil?
                 $crmContactId = $crmDetails['ContactId'];
@@ -178,7 +177,7 @@ class CrmStudentController extends Controller
 
             $i++;
         }
-
+        //dd($data);
         //verificam daca are si copii
         $studentCards = CrmStudent::where('email', '=', $email)->orderBy('crm_id', 'desc')->get();
 
@@ -187,7 +186,7 @@ class CrmStudentController extends Controller
             return $data;
         } else {
             //parcurgem logica ptr copii
-            $data['TipUser'] = 'ProfesorElev';
+            //$data['TipUser'] = 'ProfesorElev';
 
             $i =  0;
 
