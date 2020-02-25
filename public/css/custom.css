@@ -22,3 +22,143 @@
 .uk-card-body {
     cursor: pointer;
 }
+
+
+#app {
+    background-image: url(../img/pattern-issedu.png) !important;
+    background-repeat: repeat;
+    min-height: calc(100vh)!important;
+}
+
+#footer{
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+.voyager .side-menu.sidebar-inverse,
+.app-container.expanded .content-container .side-menu {
+    background-image: url(../img/pattern-issedu.png) !important;
+    background-repeat: repeat;
+    background-color: #68a7db!important;
+}
+
+h1, h2, h3, h4, h5, h6, h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+    color: #212121;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 1.2;
+    -webkit-font-smoothing: antialiased;
+}
+
+.voyager .side-menu.sidebar-inverse .navbar li>a:hover {
+    color: #fff;
+    background: #d33550;
+}
+
+.app-container .content-container .side-menu .navbar-nav li a .title {
+    position: relative;
+    top: 0px;
+}
+.voyager .side-menu.sidebar-inverse .navbar li>a {
+    display: flex;
+    align-items: center;
+}
+
+.voyager .side-menu.sidebar-inverse .navbar li>a {
+    color: #ffffff;
+}
+
+.voyager .app-footer {
+    display: none;
+}
+.logout-btn .btn{
+    margin-top: 0!important;
+}
+
+.app-container .content-container .side-menu .navbar-header .navbar-brand{
+    padding:5px;
+}
+
+.social-media{
+    color:#ffffff;
+}
+
+.facebook .uk-card-default{
+    background-color: #4b69b0;
+}
+.youtube .uk-card-default{
+    background-color:#e83f3b;
+}
+.linkedin .uk-card-default{
+    background-color:#0478b5;   
+}
+
+.instagram .uk-card-default{
+    background-color:#c6366a;
+}
+
+.social-media .uk-card-default .uk-card-title {
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+}
+.social-media .uk-icon {
+    margin-right:5px;
+}
+
+.uk-divider-vertical {
+    border-left: 1px solid #51d655;
+}
+
+/* .card-section-title{
+    color: rgb(118, 175, 223);
+} */
+.camps b{
+    color: #63a143!important;
+}
+.camps .uk-card-default .uk-card-title {
+    color: #63a143!important;
+    font-size: 1.8rem;
+    line-height: 1.5;
+}
+
+.side-body > div {
+    background-image: none!important;
+}
+
+.app-container .content-container .side-menu .navbar-header .navbar-brand img {
+    max-width: 193px;
+}
+
+.uk-modal-title {
+    font-size: 2.2rem;
+    line-height: 1.3;
+    color: #63a143!important;
+    margin-bottom: 15px;
+}
+
+.uk-accordion-title {
+    font-size: 1.4rem;
+    line-height: 1.4;
+    color: #ffffff;
+    background-color:#63a143;
+    padding: 15px;
+}
+
+.uk-accordion-title:focus, .uk-accordion-title:hover {
+    color: #ffffff;
+    text-decoration: none;
+    outline: 0;
+}
+
+.uk-open > .uk-accordion-title{
+    background-color: #7dc856;
+}
+.uk-close svg{
+    width: 20px;
+}
+
+.uk-modal-body {
+    padding: 45px 45px;
+}

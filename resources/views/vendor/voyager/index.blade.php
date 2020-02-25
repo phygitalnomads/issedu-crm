@@ -11,24 +11,82 @@
 <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.2/dist/js/uikit.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.2/dist/js/uikit-icons.min.js"></script>
 
+
+
 @section('content')
-    <!-- <h3 style="text-align: center"><a href="/admin/utilizator">Detalii</a></h3> -->
-    <!-- <h3 style="text-align: center"><a href="/admin/profesor">Test Profesor cu id-ul 41576 din crm(mediu test)</a></h3> -->
-    <?php //echo $user->name ?>
-    <?php //dd($data) ?>
-    <div class="page-content container">
+<div id="app">
+
+        <!-- <h3 style="text-align: center"><a href="/admin/utilizator">Detalii</a></h3> -->
+        <!-- <h3 style="text-align: center"><a href="/admin/profesor">Test Profesor cu id-ul 41576 din crm(mediu test)</a></h3> -->
+        <?php //echo $user->name ?>
+        <?php //dd($data) ?>
         @include('voyager::alerts')
         @include('voyager::dimmers')
 
+        
 
-        <?php //dd($data); ?>
+        
 
-        <?php if (isset($data)) : ?>
-          <div class="container">
+    <!-- Social media links -->
+    <div class="uk-container">
+        <div class="uk-child-width-1-4@m uk-grid-small uk-grid-match" uk-grid>
+            <div class="social-media facebook">
+                <a href="https://www.facebook.com/issedu.ro/" target="_blank" rel="noopener noreferrer">
+                    <div class="uk-card uk-card-default uk-card-body">
+                        <h3 class="uk-card-title uk-margin-remove"><span uk-icon="facebook"></span><span>Facebook</span></h3>
+                    </div>
+                </a> 
+            </div>
+            <div class="social-media instagram">
+                <a href="https://www.instagram.com/issedu.ro" target="_blank" rel="noopener noreferrer">
+                    <div class="uk-card uk-card-default uk-card-body">
+                        <h3 class="uk-card-title uk-margin-remove"><span uk-icon="instagram"></span><span>Instagram</span></h3>
+                    </div>
+                </a> 
+            </div>
+            <div class="social-media linkedin">
+                <a href="https://www.linkedin.com/in/international-summer-scools-education-6b7434158" target="_blank" rel="noopener noreferrer">
+                    <div class="uk-card uk-card-default uk-card-body">
+                        <h3 class="uk-card-title uk-margin-remove"><span uk-icon="linkedin"></span><span>Linkedin</span></h3>
+                    </div>
+                </a> 
+            </div>
+            <div class="social-media youtube">
+                <a href="https://www.youtube.com/channel/UCZlTjiWKtIQmJo2Qzqf1tvg" target="_blank" rel="noopener noreferrer">
+                    <div class="uk-card uk-card-default uk-card-body">
+                        <h3 class="uk-card-title uk-margin-remove"><span uk-icon="youtube"></span><span>Youtube</span></h3>
+                    </div>
+                </a> 
+            </div>
+        </div>
+    </div>
+
+    <hr class="uk-divider-vertical">
+
+    <h4 class="uk-text-center uk-margin-remove">
+        <a href="mailto:office@issedu.ro">
+            <span uk-icon="mail"></span>
+            <span>Ai o intrebare? Scrie-ne la adresa: </span><span style="color: #63a143!important;">office@issedu.ro</span>
+        </a>
+    </h4>
+
+    <hr class="uk-divider-vertical">
+
+    <!-- Cards section -->
+    <div class="uk-section uk-section-default camps">
+        <div class="uk-container">
+
+            <h3 class="uk-margin-remove-top card-section-title">Lista tabere</h3>
+
+            <hr class="uk-divider-small">
+
+            <div class="uk-grid-match uk-child-width-1-2@m" uk-grid>
+            <?php //dd($data); ?>
+            <?php if (isset($data)) : ?>
 
             <?php if ($data['TipUser'] == 'Student') : ?>
-              <?php if (isset($data['Carduri'])) : ?>
-              <?php /*
+            <?php if (isset($data['Carduri'])) : ?>
+            <?php /*
                 <table class="table table-hover">
                     <tbody>
                     <?php foreach ($data['Carduri'] as $card) : ?>
@@ -266,18 +324,11 @@
                 </div>
 
 
-              <?php endif; ?>
+            <?php endif; ?>
             <?php endif; ?>
 
-
-
-
-
-
-
-
             <?php if ($data['TipUser'] == 'Profesor') : ?>
-              <?php if (isset($data['Carduri'])) : ?>
+            <?php if (isset($data['Carduri'])) : ?>
                 <table class="table table-hover">
                     <tbody>
                     <?php foreach ($data['Carduri'] as $card) : ?>
@@ -290,7 +341,7 @@
                     <?php endforeach; ?>
                     </tbody>
                 </table>
-              <?php endif; ?>
+            <?php endif; ?>
             <?php endif; ?>
 
             <?php if ($data['TipUser'] == 'ProfesorElev') : ?>
@@ -327,15 +378,33 @@
                 <?php endif; ?>
             <?php endif; ?>
 
-          </div>
-        <?php endif; ?>
+            <?php endif; ?>
 
-        <?php if (!isset($data)) : ?>
-        <h2 style="text-align:center"> Momentan nu avem detalii despre acest cont </h2>
-        <h2 style="text-align:center"><a href='/admin/utilizator'>Reincearca</a></h2>
-        <?php endif; ?>
+            <?php if (!isset($data)) : ?>
+                <h3 style="text-align:center"> Momentan nu avem detalii despre acest cont </h3>
+                <h3 style="text-align:center;color: #63a143!important;"><a href='/admin/utilizator' style="color: #63a143!important;">Reincearca</a></h3>
+            <?php endif; ?>
+            </div>
 
-
-        aici
+        </div>
     </div>
+
+
+    <!-- Footer section -->
+    <div id="footer" class="uk-section uk-section-muted uk-padding-small">
+        <div class="uk-container">
+            <div class="uk-grid-match uk-child-width-1-2@m" uk-grid>
+                <div>
+                    <p>&copy; 2020 International Summer Schools Education</p>
+                </div>
+                <div>
+                    <p class="uk-text-right"><a href="https://www.issedu.ro">issedu.ro</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
 @stop
