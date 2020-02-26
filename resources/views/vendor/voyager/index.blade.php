@@ -239,19 +239,19 @@
                                                         </tr>
                                                         <tr>
                                                             <td>Contract atasat</td>
-                                                            <td><a href="<?= $card['Detalii']['ContractAtasat'] ?>">Descarca</a></td>
+                                                            <td><a href="<?= $card['Detalii']['ContractAtasat'] ?>" download="ContractAtasat">Descarca</a></td>
                                                         </tr>
                                                         <tr>
                                                             <td>Factura avans/td>
-                                                            <td><a href="<?= $card['Detalii']['FacturiAtasate'] ?>">Descarca</a></td>
+                                                            <td><a href="<?= $card['Detalii']['FacturiAtasate'] ?>" download="FacturiAtasate">Descarca</a></td>
                                                         </tr>
                                                         <tr>
                                                             <td>Factura rest plata</td>
-                                                            <td><a href="<?= $card['Detalii']['IncarcaFactura3'] ?>">Descarca</a></td>
+                                                            <td><a href="<?= $card['Detalii']['IncarcaFactura3'] ?>" download="Factura">Descarca</a></td>
                                                         </tr>
                                                         <tr>
                                                             <td>Factura bilet avion</td>
-                                                            <td><a href="<?= $card['Detalii']['IncarcaFacturaAvion'] ?>">Descarca</a></td>
+                                                            <td><a href="<?= $card['Detalii']['IncarcaFacturaAvion'] ?>" download="FacturaAviont">Descarca</a></td>
                                                         </tr>
                                                         <tr>
                                                             <td>Data primei plati</td>
@@ -463,7 +463,7 @@
                                                     </tr>
                                                     <tr>
                                                         <td>Contract atasat</td>
-                                                        <td><a href="<?= $card['Detalii']['ContractAtaat'] ?>">Descarca</a></td>
+                                                        <td><a href="<?= $card['Detalii']['ContractAtaat'] ?>" download="ContractAtasat">Descarca</a></td>
                                                     </tr>
                                                     <tr>
                                                         <td>Anexe</td>
@@ -697,19 +697,19 @@
                                                     </tr>
                                                     <tr>
                                                         <td>Contract atasat</td>
-                                                        <td><a href="<?= $card['Detalii']['ContractAtasat'] ?>">Descarca</a></td>
+                                                        <td><a href="<?= $card['Detalii']['ContractAtasat'] ?>" download="ContractAtasat">Descarca</a></td>
                                                     </tr>
                                                     <tr>
-                                                        <td>Factura avans/td>
-                                                        <td><a href="<?= $card['Detalii']['FacturiAtasate'] ?>">Descarca</a></td>
+                                                        <td>Factura avans</td>
+                                                        <td><a href="<?= $card['Detalii']['FacturiAtasate'] ?>" download="FacturiAtasate">Descarca</a></td>
                                                     </tr>
                                                     <tr>
                                                         <td>Factura rest plata</td>
-                                                        <td><a href="<?= $card['Detalii']['IncarcaFactura3'] ?>">Descarca</a></td>
+                                                        <td><a href="<?= $card['Detalii']['IncarcaFactura3'] ?>" download="Factura">Descarca</a></td>
                                                     </tr>
                                                     <tr>
                                                         <td>Factura bilet avion</td>
-                                                        <td><a href="<?= $card['Detalii']['IncarcaFacturaAvion'] ?>">Descarca</a></td>
+                                                        <td><a href="<?= $card['Detalii']['IncarcaFacturaAvion'] ?>" download="FacturaAvion">Descarca</a></td>
                                                     </tr>
                                                     <tr>
                                                         <td>Data primei plati</td>
