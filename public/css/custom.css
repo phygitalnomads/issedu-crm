@@ -162,3 +162,61 @@ h1, h2, h3, h4, h5, h6, h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 .uk-modal-body {
     padding: 45px 45px;
 }
+
+.uk-table-responsive tr td:first-child{
+    font-weight: 800;;
+}
+.uk-table-responsive tr td{
+    padding-right: 0!important;
+    padding-left: 0!important;
+}
+@media only screen and (max-width: 960px) {
+    .app-container .container-fluid{
+        padding: 0;
+    }
+    .app-container .content-container .side-body.padding-top{
+        margin:0;
+    }
+    .uk-card-body {
+        padding: 10px 15px;
+    }
+    
+    .uk-divider-vertical {
+        height: 25px;
+    }
+    #footer *+.uk-grid-margin,#footer .uk-grid+.uk-grid,#footer .uk-grid>.uk-grid-margin {
+        margin-top: 5px;
+    }
+    #footer p{
+        text-align: center!important;
+    }
+    .app-container {
+        padding-bottom: 80px;
+    }
+    .uk-table {
+        padding:0!important;
+        font-size: 14px;
+        line-height: 0.8;
+    }    
+    .camps .uk-card-default .uk-card-title {
+        color: #63a143!important;
+        font-size: 1.5rem;
+        line-height: 1.2;
+    }
+    
+    .app-container .content-container .navbar-top{
+        border-bottom: 2px solid #dfdfdf;
+    }
+    .hamburger.btn-link{
+        margin-left: 15px;
+    }
+    .uk-modal-body {
+        padding: 20px 15px;
+    }
+    .uk-table td {
+        padding: 12px 12px;
+    }
+    .uk-modal-title {
+        font-size: 1.6rem;
+    }
+}

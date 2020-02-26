@@ -29,7 +29,7 @@
 
     <!-- Social media links -->
     <div class="uk-container">
-        <div class="uk-child-width-1-4@m uk-grid-small uk-grid-match" uk-grid>
+        <div class="uk-child-width-1-2 uk-child-width-1-4@m uk-grid-small uk-grid-match" uk-grid>
             <div class="social-media facebook">
                 <a href="https://www.facebook.com/issedu.ro/" target="_blank" rel="noopener noreferrer">
                     <div class="uk-card uk-card-default uk-card-body">
@@ -76,18 +76,21 @@
     <div class="uk-section uk-section-default camps">
         <div class="uk-container">
 
-            <h3 class="uk-margin-remove-top card-section-title">Lista tabere</h3>
 
-            <hr class="uk-divider-small">
 
-            <div class="uk-grid-match uk-child-width-1-2@m" uk-grid>
+            <div class="cards-wrapper-section">
             <?php //dd($data); ?>
             <?php if (isset($data)) : ?>
 
                 <?php if ($data['TipUser'] == 'Student') : ?>
                     <?php if (isset($data['Carduri'])) : ?>
+                        <h3 class="uk-margin-remove-top card-section-title">Lista tabere</h3>
 
+                        <hr class="uk-divider-small">
                         <div class="uk-child-width-1-2@s uk-grid-match" uk-grid>
+
+
+                            
 
                             <?php foreach ($data['Carduri'] as $card) : ?>
 
@@ -314,7 +317,11 @@
 
                 <?php if ($data['TipUser'] == 'Profesor') : ?>
                     <?php if (isset($data['Carduri'])) : ?>
-                        <h2>Detalii Profesor</h2>
+                        <h3 class="uk-margin-remove-top card-section-title">Tabere organizate</h3>
+
+                        <hr class="uk-divider-small">
+
+
                         <div class="uk-child-width-1-2@s uk-grid-match" uk-grid>
 
                         <?php foreach ($data['Carduri'] as $card) : ?>
@@ -538,7 +545,9 @@
                     <?php endif; ?>
 
                     <?php if(isset($data['Elevi'])) : ?>
-                        <h2>Detalii copii</h2>
+                        <h3 class="uk-margin-remove-top card-section-title">Info Elevi</h3>
+
+                        <hr class="uk-divider-small">
                         <div class="uk-child-width-1-2@s uk-grid-match" uk-grid>
 
                         <?php foreach ($data['Elevi'] as $card) : ?>
