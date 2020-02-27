@@ -459,7 +459,7 @@
                                                     <tbody>
                                                     <tr>
                                                         <td>Oferta acceptata</td>
-                                                        <td><?= $card['Tabara']['OfertaTransmisaSiAcceptata'] ?></td>
+                                                        <td><a href="<?= $card['Tabara']['OfertaTransmisaSiAcceptata'] ?>">Descarca</a></td>
                                                     </tr>
                                                     <tr>
                                                         <td>Contract atasat</td>
@@ -693,7 +693,7 @@
                                                     <tbody>
                                                     <tr>
                                                         <td>Oferta tabara</td>
-                                                        <td><?= $card['Tabara']['OfertaTransmisaSiAcceptata'] ?></td>
+                                                        <td><a href="<?= $card['Tabara']['OfertaTransmisaSiAcceptata'] ?>" download="OfertaAcceptata">Descarca oferta</a></td>
                                                     </tr>
                                                     <tr>
                                                         <td>Contract atasat</td>
