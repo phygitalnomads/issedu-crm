@@ -775,8 +775,9 @@
             <?php endif; ?>
 
             <?php if (!isset($data)) : ?>
+            <?php header("Location: /admin/utilizator") ?>
                 <h3 style="text-align:center"> Momentan nu avem detalii despre acest cont </h3>
-                <h3 style="text-align:center;color: #63a143!important;"><a href='/admin/utilizator' style="color: #63a143!important;">Reincearca</a></h3>
+                <h3 style="text-align:center;color: #63a143!important;"><a href='/admin/utilizator' id="reincearca" style="color: #63a143!important;">Reincearca</a></h3>
             <?php endif; ?>
             </div>
 
@@ -789,7 +790,7 @@
         <div class="uk-container">
             <div class="uk-grid-match uk-child-width-1-2@m" uk-grid>
                 <div>
-                    <p>&copy; 2020 International Summer Schools Education</p>
+                    <p>&copy; <?php echo date("Y"); ?> International Summer Schools Education</p>
                 </div>
                 <div>
                     <p class="uk-text-right"><a href="https://www.issedu.ro">issedu.ro</a></p>
@@ -799,6 +800,5 @@
     </div>
 
 </div>
-
 
 @stop
